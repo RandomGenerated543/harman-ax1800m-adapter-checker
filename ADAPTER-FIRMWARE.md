@@ -11,6 +11,12 @@ Both ZIPs include the candidate binary, stock rollback, uploader, instructions, 
 
 **Neither package matches the newer AX1800M/Suding system 202603120956CA / protocol 20260109175612 covered by this repository's read-only probe.** No exact firmware fix for that newer combination is included.
 
+## Source-only October relay experiment for a Mini Ultra 1-B
+
+The [Carlinkit MINI Ultra 1-B October relay source experiment](./experimental/ax1800m-mini-ultra-october-relay/README.md) is a separate, source-only contribution. It does not replace or modify either downloadable package above, and does not include an OTA TAR, patched application, rollback image, or uploader. Its expected vendor input is catalog `ax_202610081657` (stock OTA TAR SHA-256 `13ca438ad4db00bbac0fa4650419df110bf17611a69525409261318a8bbade86`; pinned `sdDongle` SHA-256 `edff2ce4ae238d682fdc45be680d4cab919fc1be09bf398aaff4897289390bcb`). The published source experiment records an owner-reported sample from one adapter labeled Mini Ultra 1-B: `AX1800M / suding / v851se-yunlian-cp`, system `202603120956CA`, protocol `20261008165747`, catalog `ax_202610081657`. These observed values are not defaults, and neither the retail label nor OTA catalog offer establishes another unit's installed executable or compatibility.
+
+On one owner-reported Skoda MHI2 / `MHI2_ER_SKG13_P4526_MU1440` setup, CarPlay video/configuration, navigation symbols, and zoom were observed; one menu exit did not immediately disconnect. v0.4 corrects a source-level teardown classification error (`CFDictionary` versus stream array). This does not prove the cause of that menu-exit behavior or qualify it. Spontaneous keepalive disconnects remain unresolved. This single report does not establish universal vehicle support or stability. HU geometry is dynamic, but firmware hooks and ABI are tied to the pinned October executable.
+
 ## Use
 
 Download and extract the entire matching ZIP. Read its README before connecting or flashing. Keep IMAGES.json and the firmware folder together with the uploader; keep the rollback available. Start with the local `dry-run`, then `probe` to confirm the adapter identity. Use the package's own install and rollback commands. Do not mix files from older packages.

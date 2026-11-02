@@ -26,3 +26,7 @@ Default address: `192.168.50.100`. Use `--host LOCAL_IP` to override it. Expecte
 The checker reads identity and the web page and checks existing SSH/Telnet ports for banners. It does not attempt logins, upload firmware, execute updater commands, reboot, or change settings. Five host tests passed; hardware execution remains untested. The separately downloaded firmware uploaders have explicit flash/rollback commands that do write to the adapter.
 
 See [detailed checker instructions](./PROBE-README.md). Do not publish diagnostic captures without reviewing them for private information.
+
+## AX1800M source experiment for Carlinkit MINI Ultra 1-B
+
+[Experimental October relay source and offline tests](./experimental/ax1800m-mini-ultra-october-relay/README.md) cover an owner-reported Mini Ultra 1-B sample and one Skoda MHI2 / MU1440 test. CarPlay video/configuration, navigation symbols, and zoom were observed; one menu exit did not immediately disconnect. v0.4 corrects a source-level teardown classification error (`CFDictionary` versus stream array), but the cause and qualification of menu-exit behavior remain unproven. Spontaneous keepalive disconnects remain unresolved. The source is tied to the October `sdDongle` baseline and includes no firmware or uploader.
